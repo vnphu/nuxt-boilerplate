@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "name": "Getting Started",
+      "icon": "pi pi-home",
+      "children": [
+        {
+          "name": "Installation",
+          "to": "/installation"
+        },
+        {
+          "name": "Configuration",
+          "to": "/configuration"
+        },
+        {
+          "name": "Accessibility",
+          "to": "/accessibility"
+        }
+      ]
+    },
+    {
+      "name": "PrimeBlocks",
+      "icon": "pi pi-server",
+      "href": "https://blocks.primevue.org"
+    },
+    {
+      "name": "PrimeFlex CSS",
+      "icon": "pi pi-table",
+      "href": "https://www.primefaces.org/primeflex"
+    },
+    {
+      "name": "Support",
+      "icon": "pi pi-question",
+      "children": [
+        {
+          "name": "Discord Server",
+          "href": "https://discord.gg/gzKFYnpmCY"
+        },
+        {
+          "name": "Forum",
+          "href": "https://forum.primefaces.org/viewforum.php?f=57"
+        },
+        {
+          "name": "PRO Support",
+          "to": "/support"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@vnphu/nuxt-boilerplate",
+  "version": "1.0.0",
+  "description": "Template Nuxt ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "template",
+    "template.config.js",
+    "!template/node_modules",
+    "!node_modules",
+    "!template/yarn.lock"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vnphu/nuxt-boilerplate.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "vue3",
+    "vite",
+    "prime",
+    "auth"
+  ],
+  "author": "vnphu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vnphu/nuxt-boilerplate/issues"
+  },
+  "homepage": "https://github.com/vnphu/nuxt-boilerplate#readme"
+}
