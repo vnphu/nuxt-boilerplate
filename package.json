@@ -1,10 +1,12 @@
 {
   "name": "@vnphu/nuxt-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Template Nuxt ",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "exit 0"
+  },
+  "bin": {
+    "@vnphu/nuxt-boilerplate": "./index.js"
   },
   "files": [
     "template",
@@ -25,7 +27,7 @@
     "prime",
     "auth"
   ],
-  "author": "vnphu",
+  "author": "vnphu <vonhuphu117@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vnphu/nuxt-boilerplate/issues"
