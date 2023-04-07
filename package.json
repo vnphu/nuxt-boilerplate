@@ -1,19 +1,16 @@
 {
-  "name": "@vnphu/nuxt-boilerplate",
-  "version": "1.0.5",
+  "name": "vnphu-nuxt-boilerplate",
+  "version": "1.0.2",
   "description": "Template Nuxt ",
   "scripts": {
     "test": "exit 0"
   },
+  "main": "index.js",
   "bin": {
-    "@vnphu/nuxt-boilerplate": "./index.js"
+    "vnphu-nuxt-boilerplate": "./index.js"
   },
   "files": [
-    "template",
-    "template.config.js",
-    "!template/node_modules",
-    "!node_modules",
-    "!template/yarn.lock"
+    "template/*"
   ],
   "repository": {
     "type": "git",
@@ -32,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/vnphu/nuxt-boilerplate/issues"
   },
-  "homepage": "https://github.com/vnphu/nuxt-boilerplate#readme"
+  "homepage": "https://github.com/vnphu/nuxt-boilerplate#readme",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "shelljs": "^0.8.5"
+  }
 }
