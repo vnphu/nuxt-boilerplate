@@ -9,4 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(ToastService);
   nuxtApp.vueApp.component("Toast", Toast);
   nuxtApp.vueApp.component("Calendar", Calendar);
+
+  
+
 });

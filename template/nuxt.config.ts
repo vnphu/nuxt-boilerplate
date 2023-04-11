@@ -31,11 +31,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     apiBase: configByEnv.API_URL,
+    public: {
+      apiBase: configByEnv.API_URL,
+    },
   },
-  axios: {
-    baseURL: configByEnv.API_URL,
-  },
-
   auth: {
     globalMiddleware: true,
     redirect: {
@@ -76,10 +75,21 @@ export default defineNuxtConfig({
     },
   },
   css: [
+    '@/assets/styles/reset.css',
     'primevue/resources/themes/lara-light-blue/theme.css',
     'primevue/resources/primevue.css',
     'primeicons/primeicons.css',
+    '@/assets/styles/all.scss',
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@import "@/assets/styles/all.scss";',
+        },
+      },
+    },
+  },
   build: {
     transpile: ['primevue'],
   },
