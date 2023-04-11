@@ -13,7 +13,7 @@ console.log(configByEnv)
 
 export default defineNuxtConfig({
   ssr: false,
-  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@sidebase/nuxt-auth', '@pinia/nuxt'],
+  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt-alt/auth'],
   buildModules: ['@nuxtjs/moment'],
 
   unocss: {
@@ -33,25 +33,50 @@ export default defineNuxtConfig({
     authSecret: configByEnv.AUTH_SECRET, // can be overridden by NUXT_AUTH_SECRET environment variable
     apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
     apiBase: configByEnv.API_URL,
-    public: {
-      apiBase: configByEnv.API_URL, // can be overridden by NUXT_PUBLIC_API_BASE environment variable
-    },
   },
-  // axios: {
-  //   baseURL: process.env.API_URL,
-  // },
+  axios: {
+    baseURL: process.env.API_URL,
+  },
 
   auth: {
-    enableGlobalAppMiddleware: true,
-    // origin: configByEnv.API_URL,
-    basePath: '/api',
-    addDefaultCallbackUrl: false,
-    globalMiddlewareOptions: {
-      allow404WithoutAuth: true,
-      addDefaultCallbackUrl: false,
+    globalMiddleware: true,
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/',
+      home: '/chat',
+    },
+    strategies: {
+      mighty: {
+        scheme: 'local',
+        endpoints: {
+          login: {
+            url: `auth/login`,
+          },
+          logout: false,
+          refresh: {
+            url: `auth/refresh-token`,
+          },
+          user: {
+            url: `customer/user-info`,
+          },
+        },
+        token: {
+          property: 'result.access_token',
+          type: 'Bearer',
+          maxAge: 60 * 60 * 24 * 30,
+        },
+        refreshToken: {
+          property: 'result.refresh_token',
+          data: 'refresh_token',
+          maxAge: 60 * 60 * 2,
+        },
+        user: {
+          property: 'result',
+        },
+      },
     },
   },
-
   css: [
     'primevue/resources/themes/lara-light-blue/theme.css',
     'primevue/resources/primevue.css',

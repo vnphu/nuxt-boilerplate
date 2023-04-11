@@ -1,6 +1,6 @@
 # nuxt-boilerplate with
 1. Nuxt3
-1. Nuxt-auth
+1. Auth
 1. Prime
 
 # RUN 
