@@ -30,12 +30,10 @@ export default defineNuxtConfig({
     client: false,
   },
   runtimeConfig: {
-    authSecret: configByEnv.AUTH_SECRET, // can be overridden by NUXT_AUTH_SECRET environment variable
-    apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
     apiBase: configByEnv.API_URL,
   },
   axios: {
-    baseURL: process.env.API_URL,
+    baseURL: configByEnv.API_URL,
   },
 
   auth: {
@@ -43,8 +41,8 @@ export default defineNuxtConfig({
     redirect: {
       login: '/login',
       logout: '/',
-      callback: '/',
-      home: '/chat',
+      callback: '/login',
+      home: '/',
     },
     strategies: {
       mighty: {

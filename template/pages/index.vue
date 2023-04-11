@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  auth: true,
+  auth: 'guest',
 });
 console.log('index');
 </script>
