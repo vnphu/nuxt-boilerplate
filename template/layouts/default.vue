@@ -15,7 +15,6 @@ watch(() => appStore.error, (error) => {
 
 <template>
   <div class="layout">
-    Layout: default
     <Toast />
     <NuxtPage />
   </div>

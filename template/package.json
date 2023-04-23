@@ -9,21 +9,23 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.3.3"
+    "@nuxtjs/i18n": "^8.0.0-beta.11",
+    "nuxt": "^3.4.2"
   },
   "dependencies": {
-    "@nuxt-alt/auth": "^2.3.10",
+    "@nuxt-alt/auth": "^2.3.12",
     "@nuxt-alt/http": "^1.6.4",
     "@nuxt/types": "^2.16.3",
     "@nuxtjs/moment": "^1.6.1",
     "@pinia/nuxt": "^0.4.7",
     "@types/node": "^18.15.11",
     "@unocss/nuxt": "^0.50.6",
-    "@vueuse/nuxt": "^9.13.0",
+    "@vueuse/nuxt": "^10.0.2",
     "axios": "^1.3.4",
     "primeicons": "^6.0.1",
     "primevue": "^3.26.1",
     "sass": "^1.61.0",
-    "sass-loader": "^13.2.2"
+    "sass-loader": "^13.2.2",
+    "vue3-smooth-dnd": "^0.0.5"
   }
 }

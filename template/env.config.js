@@ -1,10 +1,10 @@
 const ConfigByEnvs = {
   development: {
-    API_URL: 'https://mightyid-v2-api-nginx.studyguide.dev',
+    API_URL: 'https://api.example.com',
     AUTH_SECRET: `example`,
   },
   production: {
-    API_URL: `https://api.example.com`,
+    API_URL: 'https://api.example.com',
     AUTH_SECRET: `example`,
   },
 }

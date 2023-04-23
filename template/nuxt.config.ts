@@ -13,9 +13,36 @@ console.log(configByEnv)
 
 export default defineNuxtConfig({
   ssr: false,
-  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt-alt/auth'],
-  buildModules: ['@nuxtjs/moment'],
+  app: {
+    head: {
+      link: [
+        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
+      ],
+      title: 'Nuxt Boilerplate',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Nuxt Boilerplate',
+        },
+        { property: 'og:image', content: '/favicon.svg' },
+        { property: 'og:title', content: 'Nuxt Boilerplate' },
+        {
+          property: 'og:description',
+          content: 'Nuxt Boilerplate',
+        },
+      ],
+    },
+  },
 
+  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt-alt/auth', '@nuxtjs/i18n'],
+  buildModules: ['@nuxtjs/moment'],
+  i18n: {
+    vueI18n: './i18n.config.js', // if you are using custom path, default
+  },
+  components: [{ path: '~/components/Common', prefix: '' }],
   unocss: {
     // presets
     uno: true, // enabled `@unocss/preset-uno`
@@ -33,6 +60,7 @@ export default defineNuxtConfig({
     apiBase: configByEnv.API_URL,
     public: {
       apiBase: configByEnv.API_URL,
+      urlLogin: configByEnv.URL_LOGIN,
     },
   },
   auth: {
@@ -44,18 +72,18 @@ export default defineNuxtConfig({
       home: '/',
     },
     strategies: {
-      mighty: {
+      local1: {
         scheme: 'local',
         endpoints: {
           login: {
-            url: `auth/login`,
+            url: `${configByEnv.API_URL}/api/auth/login`,
           },
           logout: false,
           refresh: {
-            url: `auth/refresh-token`,
+            url: `${configByEnv.API_URL}/api/auth/refresh-token`,
           },
           user: {
-            url: `customer/user-info`,
+            url: `${configByEnv.API_URL}/api/customer/user-info`,
           },
         },
         token: {
@@ -76,7 +104,7 @@ export default defineNuxtConfig({
   },
   css: [
     '@/assets/styles/reset.css',
-    'primevue/resources/themes/lara-light-blue/theme.css',
+    '@/assets/styles/prime-lara.css',
     'primevue/resources/primevue.css',
     'primeicons/primeicons.css',
     '@/assets/styles/all.scss',
