@@ -37,11 +37,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt-alt/auth', '@nuxtjs/i18n'],
-  buildModules: ['@nuxtjs/moment'],
-  i18n: {
-    vueI18n: './i18n.config.js', // if you are using custom path, default
-  },
+  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt', '@nuxt-alt/auth'],
   components: [{ path: '~/components/Common', prefix: '' }],
   unocss: {
     // presets

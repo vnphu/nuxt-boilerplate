@@ -1,14 +1,16 @@
-import { defineNuxtPlugin } from '#app'
+import { createI18n } from 'vue-i18n'
+import en from '~/locales/en'
+import vi from '~/locales/vi'
+export default defineNuxtPlugin(({ vueApp }) => {
+  const i18n = createI18n({
+    legacy: false,
+    globalInjection: true,
+    locale: 'en',
+    messages: {
+      en: en,
+      vi: vi,
+    },
+  })
 
-export default defineNuxtPlugin((nuxtApp) => {
-  const { $auth: auth, $i18n: i18n }: any = nuxtApp
-  const func = () => {
-    console.log('check')
-    if (auth.loggedIn) {
-      i18n.locale = auth?.user?.account?.language || 'en'
-    }
-  }
-  func()
-  nuxtApp.provide('checkI18n', () => func())
-  // const { locale } = useI18n()
+  vueApp.use(i18n)
 })
