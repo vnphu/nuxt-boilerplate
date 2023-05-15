@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import ruleUnoCss from './utils/ruleUnoCss'
 import { ConfigByEnvs } from './env.config'
-
+import presetUno from '@unocss/preset-uno'
 // Load config by environment
 // @_@ need to trim else we get something like "local " or "dev "
 //@ts-ignore
@@ -47,6 +47,8 @@ export default defineNuxtConfig({
     shortcuts: [],
     // @ts-ignore
     rules: ruleUnoCss,
+    // @ts-ignore
+    presets: [presetUno()],
   },
   sourcemap: {
     server: true,

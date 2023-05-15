@@ -8,7 +8,6 @@
 definePageMeta({
   auth: 'guest',
 });
-console.log('index');
 </script>
 
 <style scoped></style>
