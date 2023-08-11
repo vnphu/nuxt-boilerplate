@@ -1,6 +1,6 @@
 {
   "name": "vnphu-nuxt-boilerplate",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Template Nuxt ",
   "scripts": {
     "test": "exit 0"
